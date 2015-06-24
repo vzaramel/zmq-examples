@@ -1,22 +1,17 @@
-FROM google/golang
- 
-RUN apt-get update -y && apt-get install -y libtool autoconf automake make g++ uuid-dev wget
-WORKDIR /tmp
-RUN wget http://download.zeromq.org/zeromq-4.0.4.tar.gz && tar -xvf zeromq-4.0.4.tar.gz && cd zeromq-* && ./configure && make install && ldconfig && cd .. && rm -rf zeromq*
+FROM vzaramel/gozmq
 
-RUN apt-get purge -y libtool autoconf automake make g++ uuid-dev wget
+WORKDIR /Users/Zara/go/src/github.com/vzaramel/zmq-examples
+ADD . /Users/Zara/go/src/github.com/vzaramel/zmq-examples
+ADD . /Users/Zara/go/src/github.com/vzaramel/zmq-examples/helloworld
 
-WORKDIR /Users/Zara/go/src/github.com/vzaramel/zmq
-ADD . /Users/Zara/go/src/github.com/vzaramel/zmq
-ADD . /Users/Zara/go/src/github.com/vzaramel/zmq/helloworld
- 
+ENV GOPATH=/go
 # go get all of the dependencies
-RUN go get github.com/alecthomas/gozmq
+RUN go get -tags zmq_4_x github.com/alecthomas/gozmq
  
-RUN go get github.com/vzaramel/zmq
+RUN go get github.com/vzaramel/zmq-examples
 
 EXPOSE 8080
 CMD []
-ENTRYPOINT ["/Users/Zara/go/bin/helloworld"]
+ENTRYPOINT ["/Users/Zara/go/bin/gozmq"]
 
 
