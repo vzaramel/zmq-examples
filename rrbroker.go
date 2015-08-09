@@ -3,7 +3,7 @@
 // Author:  Brendan Mc.
 // Requires: http://github.com/alecthomas/gozmq
 
-// package main
+package main
 
 // import (
 //     zmq "github.com/alecthomas/gozmq"

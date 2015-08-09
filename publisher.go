@@ -2,7 +2,7 @@
 //  Pubsub envelope publisher
 //
 
-// package main
+package main
 
 // import (
 //     zmq "github.com/alecthomas/gozmq"

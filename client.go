@@ -4,7 +4,7 @@
 // Author: Aaron Raddon   github.com/araddon
 // Requires: http://github.com/alecthomas/gozmq
 //
-// package main
+package main
 
 // import (
 //     "fmt"
