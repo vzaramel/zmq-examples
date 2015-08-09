@@ -11,7 +11,7 @@ func main() {
     socket, _ := context.NewSocket(zmq.REP)
     defer context.Close()
     defer socket.Close()
-    socket.Bind("tcp://*:5557")
+    socket.Bind("tcp://*:9300")
 
     // Wait for messages
     for {
